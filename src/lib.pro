@@ -2,6 +2,8 @@ TEMPLATE = lib
 CONFIG += staticlib
 VERSION = 1.0.0
 
+CONFIG *= c++11
+
 CONFIG += release
 DESTDIR = ../lib
 

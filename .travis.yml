@@ -1,0 +1,24 @@
+language: cpp
+compiler:
+- gcc
+
+before_install:
+- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+- sudo add-apt-repository ppa:beineri/opt-qt551-trusty -y
+- sudo apt-get update -qq
+- sudo apt-get install g++-5 bison flex libicu-dev -y
+- sudo apt-get install qt55base -y
+- source /opt/qt55/bin/qt55-env.sh
+
+script:
+- qmake
+- make CXX=g++-5
+- ./test
+
+sudo: required
+
+# Ubuntu 14.04 Trusty support
+sudo: required
+dist: trusty
+
+# https://docs.travis-ci.com/user/installing-dependencies/
