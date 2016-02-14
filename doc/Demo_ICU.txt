@@ -1,0 +1,13 @@
+{{ icu_transform "NFD; [:Nonspacing Mark:] Remove; NFC" "«éÉaÆ—–‑Èè™_çÇàÀoŒa»" }}
+{{ icu_transform "NFD; [:Nonspacing Mark:] Remove; Latin-ASCII; NFC" "«éÉaÆ—–‑Èè™_çÇàÀoŒa»" }}
+{{ icu_transform "Latin; Latin-ASCII; Title; [^[:Letter:][:Number:]] Remove" "This is a camelized string" }}
+{{# icu_transform_b "Latin" ~}}
+From http://userguide.icu-project.org/transforms/general
+  Αλφαβητικός Κατάλογος Βιολογία Φυσιολογία Θεολογικές
+  キャンパス
+  биологическом
+  Ρούτση, Άννα
+  김, 국삼
+  たけだ, まさゆき
+  신정은
+{{/ icu_transform_b ~}}

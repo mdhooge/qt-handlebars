@@ -1,0 +1,6 @@
+{{! vim:ft=mustache ~}}
+{{#registerPartial "MyVecPartial" ~}}
+  {{ @index0 }}. {{ @index }}. {{ this.name }}. {{ name }}. {{#if @first}}FIRST{{else}}-----{{/if}} {{#if @last}}LAST{{else}}----{{/if}}
+{{/registerPartial ~}}
+
+{{#each vec ~}}{{> MyVecPartial }}{{/each }}

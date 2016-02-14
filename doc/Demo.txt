@@ -1,0 +1,18 @@
+{{! vim:ft=mustache }}
+
+{{~+ "Demo_Properties.txt" "Demo_Boolean.txt" "Demo_Helpers.txt" ~}}
+
+{{+ "Demo_Partials.txt" }}
+
+I/O Management:
+{{# create_file (temp_path) "/" "TEST.txt"}}@basename = {{@basename}}
+@filename = {{@filename}}
+@filepath = {{@filepath}}
+@filepath_absolute = {{@filepath_absolute}}
+{{/ create_file~}}
+
+{{# create_file "../.." "/TEST" ".txt"}}@basename = {{@basename}}
+@filename = {{@filename}}
+@filepath = {{@filepath}}
+@filepath_absolute = {{@filepath_absolute}}
+{{/ create_file~}}

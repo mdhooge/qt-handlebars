@@ -1,0 +1,50 @@
+{{! vim:ft=mustache }}
+Helpers:
+  {{{ link "See more..." href=x0.foo class="story" }}}
+  <a href="FOO-x0" class="story">See more...</a>
+  {{{link}}}
+  <a ></a>
+  {{{ link "See more..." }}}
+  <a >See more...</a>
+  {{{ link href=x0.foo }}}
+  <a href="FOO-x0"></a>
+
+  {{hex forty-two}} | {{ upper (hex 42) }} | {{ hex 0x12345 fill='X' width=12 }}
+  2a | 2A | XXXXXXX12345
+  {{print 2 forty-two 'TEXT' vec vec.1 vec.1.name }}
+  qlonglong(2) int(42) QString(TEXT) QVariantList() QVariantMap() QString(vec2)
+  {{upper(print 3 forty-two)}}
+  QLONGLONG(3) INT(42)
+
+Block Helpers:
+  {{#with x0}}| {{y1}} | {{z2}} |{{/with}} ! {{y1}} ! {{z2}} !
+  | Y1 | Z2 | !  !  !
+
+  {{ # if TRU3 }}TRUE{{ else }}FALSE{{ / if }}
+  TRUE
+  {{ # if F4LSE }}TRUE{{ else }}FALSE{{ / if }}
+  FALSE
+
+"Each" block helper:
+
+  {{~ # each vec }}
+  {{ @index0 }}. {{ @index }}. {{ this.name }}. {{ name }}. {{#if @first}}FIRST{{else}}-----{{/if}} {{#if @last}}LAST{{else}}----{{/if}}
+  {{~ / each }}
+
+  x0: {{#each x0 }}
+  {{~ @key }} = "{{ this }}"
+  {{~#unless @last}} | {{/unless}}
+  {{~/each }}
+
+  {{#each R00T }}{{ @index }}. {{ name }}
+  {{/each ~}}
+
+{{! This comment creates a single blank line }}
+  {{#each EmptyH}}{{@index}}{{else}}Empty hash{{/each}}
+  {{#each 3MPTY}}{{@index}}{{else}}Empty list{{/each}}
+  {{#each EmptyM}}{{@index}}{{else}}Empty map{{/each}}
+
+{{# set_property "RUNTIME" foo="f00" bar="b4R"}} {{ foo }} {{ bar }} {{ vec.length }}
+{{~/set_property}} {{ RUNTIME }}
+  f00 b4R 3
+
