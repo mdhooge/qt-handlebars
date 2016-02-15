@@ -1,5 +1,7 @@
 TEMPLATE = app
 QT += testlib
+QT -= gui
+
 CONFIG *= c++11
 
 TARGET = ../test
