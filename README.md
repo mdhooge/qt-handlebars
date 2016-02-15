@@ -1,3 +1,5 @@
+# Qt Handlebars [![Build Status](https://travis-ci.org/mdhooge/qt-handlebars.svg?branch=master)](https://travis-ci.org/mdhooge/qt-handlebars)
+
 This is a Qt-based implementation of Handlebars.
 I used it to scaffold REST-like Qt applications;
 it can produced hundreds of kB of source code in a couple of seconds.
