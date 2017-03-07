@@ -23,8 +23,7 @@ INCLUDEPATH = \
 
 LIBS += \
   -l Handlebars -L ../lib \
-  -licuuc \
-  -licui18n \
+  $$system("icu-config --ldflags")
 
 
 CONFIG(release, debug|release) {
