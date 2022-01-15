@@ -2,7 +2,7 @@
 
 This is a Qt-based implementation of Handlebars.
 I used it to scaffold REST-like Qt applications;
-it can produced hundreds of kB of source code in a couple of seconds.
+it can produce hundreds of kB of source code in a couple of seconds.
 
 It uses `flex` and `bison` to parse the templates.
 And it uses Qt `QVariant` to keep the original, dynamic aspects of Handlebars.
